@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    let html = '<div class="coffee col-6">';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -10,8 +10,8 @@ function renderCoffee(coffee) {
 }
 
 function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    let html = '';
+    for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -19,24 +19,44 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
-    div.innerHTML = renderCoffees(filteredCoffees);
+    div1.innerHTML = renderCoffees(filteredCoffees);
 }
+// filtered search bar code
 
-function coffeeSearch(input) {
-    let bucket = [];
-    for (let i = 0; i < coffees.length; i++); {
+function myFunction() {
+    // Declare variables
+    let input, filter, div, h1, a, i, txtValue, p;
+    input = document.getElementById('filtered');
+    filter = input.value.toUpperCase();
+    div = document.getElementById("coffees");
+    h1 = div.getElementsByTagName('h1');
+    p = document.getElementsByTagName('p');
 
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < h1.length; i++) {
+        a = h1[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            h1[i].style.display = "";
+            p[i].style.display = "";
+        } else {
+            h1[i].style.display = "none";
+            p[i].style.display = "none";
+
+        }
     }
 }
+
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -53,14 +73,13 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var div = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var coffeeBtn = document.querySelector('#filtered');
-var roastSelection = document.querySelector('#roast-selection');
+let div1 = document.querySelector('#coffees');
+let submitButton = document.querySelector('#submit');
+let roastSelection = document.querySelector('#roast-selection');
+let filteredSearch = document.querySelector('#filtered')
 
-div.innerHTML = renderCoffees(coffees);
-coffeeBtn.addEventListener("keyup", updateCoffees);
+div1.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
-
+filteredSearch.addEventListener('keyup', myFunction)
 
 

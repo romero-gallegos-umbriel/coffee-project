@@ -1,18 +1,10 @@
 body {
     padding: 1.5em;
 }
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
+.d-flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
 
-/*.coffee-head {*/
-/*    border: 25px;*/
-/*    margin: 0px;*/
-/*    padding: 0px;*/
-/*}*/
+}
