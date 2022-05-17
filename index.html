@@ -9,39 +9,55 @@
 <body>
 <div class = "row justify-content-center">
     <h1 class="coffee-head col-12 text-center">Coffee!</h1>
+    <!--    hprizontal bar-->
     <div class="border-bottom p-2 border-success w-75 col-12 border-3 mb-4"></div>
+
+
+    <!--    print side-->
     <div class = "col-6" id="coffees"></div>
-<!--    <form>-->
-<!--        <label for="roast-selection"></label>-->
-<!--        <select id="roast-selection">-->
-<!--            <option>light</option>-->
-<!--            <option>medium</option>-->
-<!--            <option>dark</option>-->
-<!--        </select>-->
-<!--        <input id="submit" type="submit" />-->
-<!--    </form>-->
+    <!--    end print-->
 
-    <form class= "col-6">
+    <!--    <form>-->
+    <!--        <label for="roast-selection"></label>-->
+    <!--        <select id="roast-selection">-->
+    <!--            <option>light</option>-->
+    <!--            <option>medium</option>-->
+    <!--            <option>dark</option>-->
+    <!--        </select>-->
+    <!--        <input id="submit" type="submit" />-->
+    <!--    </form>-->
 
-            <div class="mb-3">
-                <label for="roast-selection" class="form-label">Roast</label>
-                <select id="roast-selection" class="form-select">
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="roast-selection" class="form-label">Coffee Name</label>
-                <input type="text" id="submit" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mb-4">Submit</button>
+    <!--    start right column-->
+    <form class= "col-6" id="form1">
+        <!--select roast display-->
+        <div class="mb-3">
+            <label for="roast-selection" class="form-label">Roast</label>
+            <select id="roast-selection" name="roast-selection" class="form-select">
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
+            </select>
+        </div>
 
 
+
+
+
+        <!--display coffee by name-->
+        <div class="mb-3">
+            <label for="filtered" class="form-label">Coffee Name</label>
+            <input type="text" id="filtered" class="form-control">
+        </div>
+        <button type="submit" class="coffeeBtn btn btn-primary w-100 mb-4">Submit</button>
+
+
+
+
+        <!--ADD NEW COFFEE-->
         <div>
             <div class="mb-3">
-                <label for="roast-selection" class="form-label">Roast</label>
-                <select id="roast-selection" class="form-select">
+                <label for="roast-selection2" class="form-label">Roast</label>
+                <select id="roast-selection2" class="form-select">
                     <option>Light</option>
                     <option>Medium</option>
                     <option>Dark</option>
@@ -50,14 +66,14 @@
         </div>
         <div class="mb-3">
             <label for="filtered" class="form-label">Coffee Name</label>
-            <input type="text" id="filtered" class="form-control">
+            <input type="text" id="filtered2" class="form-control" onekeyup="coffeeSearch()">
         </div>
         <button type="submit" class="btn btn-primary w-100">Submit</button>
-
+        <!--END ADD NEW COFFEE-->
     </form>
 
 
 </div>
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
