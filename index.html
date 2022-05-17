@@ -20,7 +20,8 @@
 
 
     <!--    start right column-->
-    <form class="col-5" id="form1">
+    <div class="row col-5">
+    <form class="col-12" id="form1">
         <!--select roast display-->
         <div class="mb-3">
             <label for="roast-selection" class="form-label">Roast</label>
@@ -37,26 +38,35 @@
         <input id="submit" type="submit" class="btn btn-primary w-100">
 
     </form>
-    <!--ADD NEW COFFEE-->
-    <!--        <div>-->
-    <!--            <div class="mb-3">-->
-    <!--                <label for="roast-selection2" class="form-label">Roast</label>-->
-    <!--                <select id="roast-selection2" class="form-select">-->
-    <!--                    <option>Light</option>-->
-    <!--                    <option>Medium</option>-->
-    <!--                    <option>Dark</option>-->
-    <!--                </select>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        <div class="mb-3">-->
-    <!--            <label for="filtered" class="form-label">Coffee Name</label>-->
-    <!--            <input type="text" id="filtered2" class="form-control" onekeyup="coffeeSearch()">-->
-    <!--        </div>-->
-    <!--        <button type="submit" class="btn btn-primary w-100">Submit</button>-->
-    <!--END ADD NEW COFFEE-->
+        <!--    ADD NEW COFFEE-->
+
+        <form class="col-12" id="form2">
+            <div>
+                <div class="mb-3">
+                    <label for="roast-selection2" class="form-label">Roast</label>
+                    <select id="roast-selection2" class="form-select">
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="filtered" class="form-label">Coffee Name</label>
+                <input type="text" id="filtered2" class="form-control">
+            </div>
+            <button type="submit" id="newbie" class="addCoffeeBtn btn btn-primary w-100">Submit</button>
+
+        </form>
+    </div>
 
 
-</div>
+
+    </div>
+<!--    END ADD NEW COFFEE-->
+
+
+
 <script src="main.js"></script>
 </body>
 </html>

@@ -73,13 +73,32 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+function createCoffee(e) {
+    e.preventDefault();
+    let obj = {};
+    obj.id = coffees.length + 1;
+    obj.roast= roastSelection2.value;
+    console.log(obj.roast);
+    obj.name = addCoffee.value + "";
+    coffees.push(obj);
+    console.log(obj.name);
+   return obj;
+}
+createCoffee.innerHTML = coffees;
+
 let div1 = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let filteredSearch = document.querySelector('#filtered')
+let addCoffee = document.querySelector("#filtered2");
+let addCoffeeBtn = document.querySelector('#newbie');
+let roastSelection2 = document.querySelector('#roast-selection2');
+
 
 div1.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
-filteredSearch.addEventListener('keyup', myFunction)
+filteredSearch.addEventListener('keyup', myFunction);
+
+addCoffeeBtn.addEventListener('click',createCoffee);
 
 
