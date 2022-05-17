@@ -1,9 +1,9 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="coffee col-6">';
-    html += '<h1>' + coffee.name + '</h1>';
-    html += '<p>' + coffee.roast + '</p>';
+    let html = '<div class="coffee d-flex col-6 background-1">';
+    html += '<h1 >' + coffee.name + '</h1>';
+    html += '<p class="me-auto p-2">' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
@@ -25,9 +25,14 @@ function updateCoffees(e) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
+        if (selectedRoast === "all") {
+            filteredCoffees.push(coffee);
+        }
     });
     div1.innerHTML = renderCoffees(filteredCoffees);
+
 }
+
 // filtered search bar code
 
 function myFunction() {
@@ -56,7 +61,7 @@ function myFunction() {
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-let coffees = [
+const coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -77,14 +82,15 @@ function createCoffee(e) {
     e.preventDefault();
     let obj = {};
     obj.id = coffees.length + 1;
-    obj.roast= roastSelection2.value;
+    obj.roast = roastSelection2.value;
     console.log(obj.roast);
     obj.name = addCoffee.value + "";
     coffees.push(obj);
-    console.log(obj.name);
-   return obj;
+    console.log(coffees);
+    div1.innerHTML = renderCoffees(coffees);
+    return coffees;
 }
-createCoffee.innerHTML = coffees;
+
 
 let div1 = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
@@ -96,9 +102,9 @@ let roastSelection2 = document.querySelector('#roast-selection2');
 
 
 div1.innerHTML = renderCoffees(coffees);
-submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('input', updateCoffees);
 filteredSearch.addEventListener('keyup', myFunction);
 
-addCoffeeBtn.addEventListener('click',createCoffee);
+addCoffeeBtn.addEventListener('click', createCoffee);
 
 

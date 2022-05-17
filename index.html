@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="row justify-content-center">
-    <h1 class="coffee-head col-12 text-center">Coffee!</h1>
+    <h1 class="coffee-head col-12 text-center"> The Coffee Pot</h1>
     <!--    horizontal bar-->
-    <div class="border-bottom p-2 border-success w-75 col-12 border-3 mb-4"></div>
+    <div class="border-bottom p-2 border-light w-75 col-12 border-3 mb-4"></div>
 
 
     <!--    print side-->
@@ -21,30 +24,32 @@
 
     <!--    start right column-->
     <div class="row col-5">
-    <form class="col-12" id="form1">
-        <!--select roast display-->
-        <div class="mb-3">
-            <label for="roast-selection" class="form-label">Roast</label>
-            <select id="roast-selection" name="roast-selection" class="form-select">
-                <option>light</option>
-                <option>medium</option>
-                <option>dark</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="filtered" class="form-label">Coffee Name</label>
-            <input type="text" id="filtered" class="form-control">
-        </div>
-        <input id="submit" type="submit" class="btn btn-primary w-100">
+        <form class="col-12" id="form1">
+            <!--select roast display-->
+            <div class="mb-3">
+                <label for="roast-selection" class="form-label">Roast</label>
+                <select id="roast-selection" name="roast-selection" class="form-select opacity-50">
+                    <option value="all">all</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="filtered" class="form-label">Coffee Name</label>
+                <input type="text" id="filtered" class="form-control opacity-50">
+            </div>
+            <input id="submit" type="submit" class="btn btn-dark w-100 ">
 
-    </form>
+        </form>
         <!--    ADD NEW COFFEE-->
+        <h1 class="col-12 text-center add-coffee background-1 mt-4 p-1">ADD YOUR OWN COFFEE</h1>
 
         <form class="col-12" id="form2">
             <div>
                 <div class="mb-3">
                     <label for="roast-selection2" class="form-label">Roast</label>
-                    <select id="roast-selection2" class="form-select">
+                    <select id="roast-selection2" class="form-select opacity-50">
                         <option>Light</option>
                         <option>Medium</option>
                         <option>Dark</option>
@@ -53,18 +58,16 @@
             </div>
             <div class="mb-3">
                 <label for="filtered" class="form-label">Coffee Name</label>
-                <input type="text" id="filtered2" class="form-control">
+                <input type="text" id="filtered2" class="form-control opacity-50">
             </div>
-            <button type="submit" id="newbie" class="addCoffeeBtn btn btn-primary w-100">Submit</button>
+            <button type="submit" id="newbie" class="addCoffeeBtn btn btn-dark w-100">Submit</button>
 
         </form>
     </div>
 
 
-
-    </div>
+</div>
 <!--    END ADD NEW COFFEE-->
-
 
 
 <script src="main.js"></script>
