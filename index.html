@@ -9,66 +9,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2ab8c6ab6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="row justify-content-center">
+<div class="row justify-content-center w-100">
     <h1 class="coffee-head col-12 text-center"> The Coffee Pot</h1>
-    <!--    horizontal bar-->
-    <div class="border-bottom p-2 border-light w-75 col-12 border-3 mb-4"></div>
+    <!--    Horizontal bar-->
+    <div class="border-bottom p-2 border-dark w-75 col-12 border-3 mb-4"></div>
 
 
-    <!--    print side-->
-    <div class="col-7 row" id="coffees"></div>
+    <!--    Print Coffees-->
+    <div class="col-6 row coffee-grp " id="coffees"></div>
     <!--    end print-->
 
 
-    <!--    start right column-->
-    <div class="row col-5">
-        <form class="col-12" id="form1">
-            <!--select roast display-->
-            <div class="mb-3">
-                <label for="roast-selection" class="form-label">Roast</label>
-                <select id="roast-selection" name="roast-selection" class="form-select opacity-50">
-                    <option value="all">all</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="filtered" class="form-label">Coffee Name</label>
-                <input type="text" id="filtered" class="form-control opacity-50">
-            </div>
-            <input id="submit" type="submit" class="btn btn-dark w-100 ">
+    <!--    Start right column-->
+    <div class="row col-5 justify-content-center m-1">
+        <div class="card col-12 p-0 m-2 background-3">
+            <div class="card-body">
 
-        </form>
+                <form class="col-12" id="form1">
+                    <!--Select roast display-->
+                    <div class="mb-3">
+                        <label for="roast-selection" class="form-label">Roast</label>
+                        <select id="roast-selection" name="roast-selection" class="form-select opacity-75">
+                            <option value="all">all</option>
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtered" class="form-label">Coffee Name</label>
+                        <input type="text" id="filtered" class="form-control opacity-75">
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-dark w-100 ">Search</button>
+                </form>
+            </div>
+        </div>
+
         <!--    ADD NEW COFFEE-->
-        <h1 class="col-12 text-center add-coffee background-1 mt-4 p-1">ADD YOUR OWN COFFEE</h1>
+        <h1 class="col-12 d-flex justify-content-center add-coffee background-1 m-2 p-0 ">ADD YOUR OWN COFFEE</h1>
 
-        <form class="col-12" id="form2">
-            <div>
-                <div class="mb-3">
-                    <label for="roast-selection2" class="form-label">Roast</label>
-                    <select id="roast-selection2" class="form-select opacity-50">
-                        <option>Light</option>
-                        <option>Medium</option>
-                        <option>Dark</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="filtered" class="form-label">Coffee Name</label>
-                <input type="text" id="filtered2" class="form-control opacity-50">
-            </div>
-            <button type="submit" id="newbie" class="addCoffeeBtn btn btn-dark w-100">Submit</button>
+        <div class="card col-12 p-0 m-2 background-2">
 
-        </form>
+            <div class="card-body">
+                <form class="col-12" id="form2">
+                    <div>
+                        <div class="mb-3">
+                            <label for="roast-selection2" class="form-label">Roast</label>
+                            <select id="roast-selection2" class="form-select opacity-75">
+                                <option>Light</option>
+                                <option>Medium</option>
+                                <option>Dark</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtered" class="form-label">Coffee Name</label>
+                        <input type="text" id="filtered2" class="form-control opacity-75">
+                    </div>
+                    <button type="submit" id="newbie" class="addCoffeeBtn btn btn-dark w-100">Create</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Footer-->
+<footer class="footer row col-12 justify-content-center align-items-center ">
+    <div class="col-12 d-flex p-2 justify-content-center">
+        <div class="me-2"><i class="fa-brands fa-instagram"></i></div>
+        <div class="me-2"><i class="fa-brands fa-facebook"></i></div>
+        <div class="me-2"><i class="fa-brands fa-twitter"></i></div>
+
+    </div>
+    <div class="col-12 row p-0 text-center justify-content-center">
+        <p class="col-2 m-0">Contact us</p>
+        <p class="col-1 m-0">|</p>
+        <p class="col-2 m-0">About us</p>
+        <p class="col-1 m-0">|</p>
+        <p class="col-2 m-0">Careers</p>
     </div>
 
-
-</div>
-<!--    END ADD NEW COFFEE-->
-
+</footer>
 
 <script src="main.js"></script>
 </body>
